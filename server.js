@@ -79,7 +79,10 @@ exports.register = function(commander) {
             var root = options.root;
 
             if (options.rewrite != false) {
-                options.script = options.rewrite;
+                if (options.rewrite != 'true') {
+                    options.script = options.rewrite;
+                }
+                options.rewrite = true;
             }
 
             if(root){
